@@ -1,0 +1,69 @@
+:root {
+    --clr-text: hsla(0, 0%, 0%, 1);
+    --clr-text2: hsla(220, 9%, 46%, 1);
+    --clr-details: hsla(221, 39%, 11%, 1);
+    --clr-read-more: hsla(0, 0%, 15%, 1);
+
+    --ff-primary: 'Inter', sans-serif;
+    
+    --ff-body: var(--ff-primary);
+
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-bold: 700;
+    --fw-extra-bold: 800;
+
+    --fs-42: 2.675rem;
+    --fs-18: 1.125rem;
+    --fs-14: 0.875rem;
+    --fs-12: 0.75rem;
+
+    --fs-body: var(--fs-14);
+    --fs-primary-heading: var(--fs-42);
+    --fs-secondary-heading: var(--fs-18);
+    --fs-details: var(--fs-12);
+}
+
+/* UTILITY CLASSES */
+.text-primary {
+    color: var(--clr-text);
+}
+.text-secondary {
+    color: var(--clr-text2);
+}
+.text-details {
+    color: var(--clr-details);
+}
+.text-read-more {
+    color: var(--clr-read-more);
+}
+
+.fw-regular {
+    font-weight: var(--fw-regular);
+}
+.fw-medium {
+    font-weight: var(--fw-medium);
+}
+.fw-bold {
+    font-weight: var(--fw-bold);
+}
+.fw-extra-bold {
+    font-weight: var(--fw-extra-bold);
+}
+
+.fs-primary-heading {
+    font-size: var(--fs-primary-heading);
+}
+.fs-secondary-heading {
+    font-size: var(--fs-secondary-heading);
+}
+.fs-details {
+    font-size: var(--fs-details);
+}
+
+/* GENERAL STYLING */
+body {
+    font-family: var(--ff-body);
+    font-size: var(--fs-body);
+    font-weight: var(--fw-regular);
+}

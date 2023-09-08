@@ -104,6 +104,21 @@ body {
     cursor: pointer;
 }
 
+.header__watchlist::after {
+    content: "";
+    margin-left: 17px;
+    width: 0%;
+    height: 2px;
+    display: block;
+    transition: all 0.8s ease;
+}
+
+.header__watchlist:hover::after {
+    width: 84%;
+    height: 2px;
+    background-color: var(--clr-borders);
+}
+
 /* SEARCH FORM */
 .search-form {
     display: grid;

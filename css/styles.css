@@ -116,7 +116,7 @@ body {
 .header__watchlist:hover::after {
     width: 84%;
     height: 2px;
-    background-color: var(--clr-borders);
+    background-color: var(--clr-text3);
 }
 
 /* SEARCH FORM */

@@ -92,10 +92,13 @@ body {
 .header {
     background: url("/assets/images/header-bg.png"), rgb(32, 32, 32) 0px -158.291px / 100% 423.007%;
     height: 208px;
-    padding: 0 1rem;
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+
+.header h1 { 
+    font-size: clamp(1.3rem, 0.665rem + 1.6749vw, 2.675rem);
 }
 
 .header__watchlist {
@@ -132,6 +135,12 @@ body {
     top: 187px;
     left: 0;
     right: 0;
+}
+
+@media (max-width: 500px) {
+    .search-form {
+        margin: 0 1rem;
+    }
 }
 
 .search-form__input {

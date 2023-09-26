@@ -169,10 +169,22 @@ body {
 
 .movie--container {
     margin: 3.188rem 1rem;
+    
+    /* responsive grid */
+    --min-column-size: 27rem;
+    display: grid;
+    place-content: center;
+    gap: 1rem;
+    grid-template-columns: 
+        repeat(auto-fit, minmax(min(var(--min-column-size), 100%), 1fr))
+}
+
+.movie--container > * {
+    flex: 1;
 }
 
 .movie--inner {
-    max-width: 550px;
+    max-width: 100%;
     margin: 0 auto;
     display: grid;
     grid-template-columns: auto 1fr;
@@ -181,6 +193,11 @@ body {
     "movie-poster details--info"
     ;
     column-gap: 0.5rem;
+    padding: 1rem;
+    border: 1px solid var(--clr-borders);
+    border-radius: 10px;
+    background-color: var(--clr-bg-gray);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .movie-poster {
@@ -247,5 +264,11 @@ body {
 
     .details--info {
         gap: 0.9rem;
+    }
+}
+
+@media (max-width: 910px) {
+    .movie--inner {
+        max-width: 500px;
     }
 }

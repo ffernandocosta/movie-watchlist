@@ -97,6 +97,14 @@ body {
     align-items: center;
 }
 
+.header a {
+    text-decoration: none;
+}
+
+.header i {
+    font-size: var(--fs-18);
+}
+
 .header h1 { 
     font-size: clamp(1.3rem, 0.665rem + 1.6749vw, 2.675rem);
 }
@@ -159,6 +167,11 @@ body {
     border-right: none;
     border-bottom: none;
     background: var(--clr-bg-gray);
+    cursor: pointer;
+    
+        &:hover {
+            background: hsla(210, 20%, 95%, 1);
+        }
 }
 
 .search-icon {
@@ -243,6 +256,11 @@ body {
     border: none;
     display: flex;
     gap: 0.313rem;
+    cursor: pointer;
+
+        &:hover {
+            text-decoration: underline;
+        }
 }
 
 /* RESPONSIVE SCREEN */

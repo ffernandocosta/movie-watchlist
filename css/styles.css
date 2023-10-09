@@ -214,6 +214,7 @@ body {
     "details--title details--title"
     "movie-poster details--info"
     ;
+    grid-template-rows: minmax(28px, auto);
     column-gap: 0.5rem;
     padding: 1rem;
     border: 1px solid var(--clr-borders);
@@ -244,16 +245,12 @@ body {
     gap: 0.4rem;
     grid-area: details--title;
     justify-content: center;
-}
-
-.title-year {
-    margin: 0.2rem 0 0 0;
+    align-items: baseline;
 }
 
 .details--rating {
     display: flex;
     align-items: baseline;
-    margin: 0.3rem 0 0 0;
 }
 
 .info--summary p {
@@ -279,19 +276,19 @@ body {
         "movie-poster details--title"
         "movie-poster details--info"
         ;
-        grid-template-rows: 28px auto;
-        row-gap: 1.5em;
+        row-gap: 0.5rem;
         column-gap: 1rem;
     }
 
     .details--title {
-        margin: 0.8rem 0;
         justify-content: flex-start;
     }
 
-    .details--info {
-        gap: 0.9rem;
+    .info {
+        display: flex;
+        justify-content: space-between;
     }
+
 }
 
 @media (max-width: 910px) {

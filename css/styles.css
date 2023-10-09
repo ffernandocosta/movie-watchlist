@@ -2,6 +2,7 @@
     --clr-text: hsla(0, 0%, 0%, 1);
     --clr-text2: hsla(220, 9%, 46%, 1);
     --clr-text3: hsla(0, 0%, 100%, 1);
+    --clr-text4: hsla(0, 3%, 87%, 1);
     --clr-bg-gray: hsla(210, 20%, 98%, 1);
     --clr-borders: hsla(216, 12%, 84%, 1);
     --clr-details: hsla(221, 39%, 11%, 1);
@@ -42,6 +43,9 @@
 }
 .text-read-more {
     color: var(--clr-read-more);
+}
+.text-light-grey {
+    color: var(--clr-text4);
 }
 
 .bg-white {
@@ -192,8 +196,13 @@ body {
         repeat(auto-fit, minmax(min(var(--min-column-size), 100%), 1fr))
 }
 
-.movie--container > * {
-    flex: 1;
+.container--start-exploring {
+    text-align: center;
+    margin: 10rem auto;
+}
+
+.container--start-exploring img {
+    margin: 0 auto 0.5rem auto;
 }
 
 .movie--inner {

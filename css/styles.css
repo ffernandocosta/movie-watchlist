@@ -114,8 +114,6 @@ body {
 }
 
 .header__watchlist {
-    background: none;
-    border: none;
     cursor: pointer;
 }
 

@@ -25,15 +25,15 @@
         </button>
     </header>
     <main>
-        <form class="search-form bg-white">
+        <form class="search-form bg-white" id="search-form">
             <div class="flex-group">
                 <i class="fa-solid fa-magnifying-glass search-icon" style="color: #9ca3af;"></i>
-                <input type="text" class="search-form__input fw-medium" placeholder="Search for a movie">
+                <input type="text" class="search-form__input fw-medium" id="search-input" placeholder="Search for a movie" required>
             </div>
             <button type="submit" class="search-form__btn text-details fw-medium" id="search-btn">Search</button>
         </form>
 
-        <article class="movie--container">
+        <article class="movie--container" id="movie-container">
             <!--MOVIES HERE!-->
             <div class="container--start-exploring">
                 <img src="/assets/images/film-icon.svg" alt="Old grey film icon">

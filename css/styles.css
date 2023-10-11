@@ -113,10 +113,6 @@ body {
     font-size: clamp(1.3rem, 0.665rem + 1.6749vw, 2.675rem);
 }
 
-.header__watchlist {
-    cursor: pointer;
-}
-
 .header__watchlist::after {
     content: "";
     margin-left: 17px;

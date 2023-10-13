@@ -1,0 +1,33 @@
+@import url(/css/styles.css);
+
+/* HEADER */
+.header__search::after {
+    content: "";
+    margin-left: 27px;
+    width: 0%;
+    height: 2px;
+    display: block;
+    transition: all 0.8s ease;
+}
+
+.header__search:hover::after {
+    width: 82%;
+    height: 2px;
+    background-color: var(--clr-text3);
+}
+
+.header__search-icon {
+    margin: 0 0.3rem 0 0;
+}
+
+.container--start-exploring a {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color: hsla(0, 0%, 21%, 1);
+    margin: 1rem 0 0 0;
+}
+
+.container--start-exploring img {
+    margin: 0 0.5rem 0 0;
+}

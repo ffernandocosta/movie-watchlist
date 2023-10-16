@@ -1,4 +1,4 @@
-const moviesObjArray = [];
+let moviesObjArray = [];
 const watchlistObjArray = [];
 const searchFormEl = document.getElementById('search-form');
 const moviesContainerEl = document.getElementById('movie-container');
@@ -21,6 +21,8 @@ async function getMovies() {
     const data = await response.json();
     
     if(data.Response === 'True') {
+        /* emptying movie array before fetching new movies */
+        moviesObjArray.length = 0;
         /* fetching movie details from each title of the search results */
         for(let i = 0; i < data.Search.length; i++) {
             const movieTitles = data.Search[i].Title;

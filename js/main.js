@@ -1,9 +1,17 @@
 const moviesObjArray = [];
+const watchlistObjArray = [];
 const searchFormEl = document.getElementById('search-form');
+const moviesContainerEl = document.getElementById('movie-container');
 
 searchFormEl.addEventListener('submit', (e) => {
     e.preventDefault();
     getMovies();
+})
+
+moviesContainerEl.addEventListener('click', (e) => {
+    if (e.target.dataset.watchlistBtnId) {
+        handleAddToWatchlistBtnClick(e.target.dataset.watchlistBtnId);
+    }
 })
 
 async function getMovies() {
@@ -44,7 +52,7 @@ function renderMovies() {
                 <div class="details--info">
                     <div class="info">
                         <p class="text-details fs-details">${movie.Runtime} | ${movie.Genre}</p>
-                        <button type="button" class="watchlist-btn fs-details text-details">
+                        <button type="button" data-watchlist-btn-id="${movie.imdbID}" class="watchlist-btn fs-details text-details">
                             <img src="/assets/images/add-icon.svg" alt="Add to watchlist plus icon">
                             Watchlist
                         </button>
@@ -58,6 +66,28 @@ function renderMovies() {
         `
     })
     document.getElementById("movie-container").innerHTML = html;
+}
+
+function handleAddToWatchlistBtnClick(id) {
+    const targetMovieObj = moviesObjArray.filter( (movie) => movie.imdbID === id)[0];
+    if (watchlistObjArray.includes(targetMovieObj)) {
+        watchlistObjArray.forEach( (item, index) => {
+            if (targetMovieObj === item) {
+                watchlistObjArray.splice(index, 1);
+                document.querySelector(`[data-watchlist-btn-id="${targetMovieObj.imdbID}`).innerHTML = `
+                    <img src="/assets/images/add-icon.svg" alt="Add to watchlist plus icon">
+                    Watchlist
+                `
+            }
+        })
+    }
+    else {
+        watchlistObjArray.push(targetMovieObj);
+        document.querySelector(`[data-watchlist-btn-id="${targetMovieObj.imdbID}`).innerHTML = `
+            <img src="/assets/images/remove-icon.svg" alt="Remove from watchlist icon">
+            Remove
+        `
+    }
 }
 
 function renderMovieNotFoundMessage() {

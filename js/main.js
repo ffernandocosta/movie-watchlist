@@ -17,7 +17,7 @@ moviesContainerEl.addEventListener('click', (e) => {
 async function getMovies() {
     const searchInputValue = document.getElementById('search-input').value.trim();
     /* fetching movie titles search data */
-    const response = await fetch(`http://www.omdbapi.com/?apikey=f115e7ce&s=${searchInputValue}`, {method:"GET"});
+    const response = await fetch(`https://www.omdbapi.com/?apikey=f115e7ce&s=${searchInputValue}`, {method:"GET"});
     const data = await response.json();
     
     if(data.Response === 'True') {
@@ -26,7 +26,7 @@ async function getMovies() {
         /* fetching movie details from each title of the search results */
         for(let i = 0; i < data.Search.length; i++) {
             const movieTitles = data.Search[i].Title;
-            const response2 = await fetch(`http://www.omdbapi.com/?apikey=f115e7ce&t=${movieTitles}`, {method:"GET"});
+            const response2 = await fetch(`https://www.omdbapi.com/?apikey=f115e7ce&t=${movieTitles}`, {method:"GET"});
             const data2 = await response2.json();
             moviesObjArray.push(data2);
         }

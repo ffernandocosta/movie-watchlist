@@ -1,5 +1,5 @@
+const watchlistFromLocalStorageArray = JSON.parse(localStorage.getItem('watchlist')) || [];
 let moviesObjArray = [];
-const watchlistObjArray = [];
 const searchFormEl = document.getElementById('search-form');
 const moviesContainerEl = document.getElementById('movie-container');
 
@@ -40,6 +40,7 @@ async function getMovies() {
 function renderMovies() {
     let html = ``;
     moviesObjArray.forEach((movie) => {
+        const watchlistBtnHtml = getWatchlistButtonHtml(movie);
         html += `
         <article class="movie--inner">
             <img src="${movie.Poster}" class="movie-poster">
@@ -54,10 +55,7 @@ function renderMovies() {
                 <div class="details--info">
                     <div class="info">
                         <p class="text-details fs-details">${movie.Runtime} | ${movie.Genre}</p>
-                        <button type="button" data-watchlist-btn-id="${movie.imdbID}" class="watchlist-btn fs-details text-details">
-                            <img src="/assets/images/add-icon.svg" alt="Add to watchlist plus icon">
-                            Watchlist
-                        </button>
+                        ${watchlistBtnHtml}
                     </div>
                     <div class="info--summary">
                         <p class="text-secondary">${movie.Plot}</p>
@@ -70,26 +68,40 @@ function renderMovies() {
     document.getElementById("movie-container").innerHTML = html;
 }
 
+function getWatchlistButtonHtml(movie) {
+    const isInWatchlist = watchlistFromLocalStorageArray.some( (watchListMovie) => watchListMovie.imdbID === movie.imdbID);
+    const buttonText = isInWatchlist ? "Remove" : "Watchlist";
+    const iconSrc = isInWatchlist ? "/assets/images/remove-icon.svg" : "/assets/images/add-icon.svg";
+  
+    return `
+        <button type="button" data-watchlist-btn-id="${movie.imdbID}" class="watchlist-btn fs-details text-details">
+            <img src="${iconSrc}" alt="${buttonText} icon">
+            ${buttonText}
+        </button>
+    `;
+}
+
 function handleAddToWatchlistBtnClick(id) {
     const targetMovieObj = moviesObjArray.filter( (movie) => movie.imdbID === id)[0];
-    if (watchlistObjArray.includes(targetMovieObj)) {
-        watchlistObjArray.forEach( (item, index) => {
-            if (targetMovieObj === item) {
-                watchlistObjArray.splice(index, 1);
-                document.querySelector(`[data-watchlist-btn-id="${targetMovieObj.imdbID}`).innerHTML = `
-                    <img src="/assets/images/add-icon.svg" alt="Add to watchlist plus icon">
-                    Watchlist
-                `
-            }
-        })
+    // checks to see if the target movie is already in the local storage
+    const index = watchlistFromLocalStorageArray.findIndex( (item) => item.imdbID === id);
+    if (index !== -1) {
+        watchlistFromLocalStorageArray.splice(index, 1);
+        document.querySelector(`[data-watchlist-btn-id="${targetMovieObj.imdbID}`).innerHTML = 
+        `
+            <img src="/assets/images/add-icon.svg" alt="Add to watchlist plus icon">
+            Watchlist
+        `
     }
     else {
-        watchlistObjArray.push(targetMovieObj);
-        document.querySelector(`[data-watchlist-btn-id="${targetMovieObj.imdbID}`).innerHTML = `
+        watchlistFromLocalStorageArray.push(targetMovieObj);
+        document.querySelector(`[data-watchlist-btn-id="${targetMovieObj.imdbID}`).innerHTML = 
+        `
             <img src="/assets/images/remove-icon.svg" alt="Remove from watchlist icon">
             Remove
         `
     }
+    localStorage.setItem('watchlist', JSON.stringify(watchlistFromLocalStorageArray));
 }
 
 function renderMovieNotFoundMessage() {

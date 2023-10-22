@@ -88,10 +88,6 @@ body {
     color: var(--clr-text3);
 }
 
-.container {
-    position: relative;
-}
-
 /* HEADER */
 .header {
     background: url("/assets/images/header-bg.png"), rgb(32, 32, 32) 0px -158.291px / 100% 423.007%;
@@ -261,6 +257,34 @@ body {
         &:hover {
             text-decoration: underline;
         }
+}
+
+/* FOOTER */
+
+footer {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    margin: auto 0 0 0;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+footer a::after {
+    content: "";
+    margin-left: 146px;
+    width: 0%;
+    height: 2px;
+    display: block;
+    transition: all 0.8s ease;
+}
+
+footer a:hover::after {
+    width: 43%;
+    height: 2px;
+    background-color: var(--clr-text);
 }
 
 /* RESPONSIVE SCREEN */

@@ -1,7 +1,7 @@
 # Watchify
 _[Read it in English](#english-version)_
 
-Aplicação web onde o usuário pode buscar por filmes e adicioná-los em uma 'watchlist', desenvolvido como desafio de projeto solo do módulo 8 do [Scrimba](scrimba.com), utilizando HTML, CSS, JavaScript e [OMDb API](https://www.omdbapi.com).
+Aplicação web onde o usuário pode buscar por filmes e adicioná-los em uma 'watchlist', desenvolvido como desafio de projeto solo do módulo 8 do [Scrimba](https://scrimba.com/), utilizando HTML, CSS, JavaScript e [OMDb API](https://www.omdbapi.com).
 
 ## Índice
 
@@ -32,7 +32,7 @@ https://github.com/ffernandocosta/movie-watchlist/assets/70672573/f82c45e0-0b92-
 
 ### Links
 
-- [Live version]()
+- [Live version](https://watchify-jade.vercel.app)
 
 ## Meu processo
 
@@ -74,7 +74,7 @@ https://github.com/ffernandocosta/movie-watchlist/assets/70672573/f82c45e0-0b92-
 
 # Watchify
 
-A movie watchlist developed as a solo project challenge from [Scrimba's](scrimba.com) course module 8 using HTML, CSS, JavaScript and [OMDb API](https://www.omdbapi.com).
+A movie watchlist developed as a solo project challenge from [Scrimba's](https://scrimba.com/dashboard#overview) course module 8 using HTML, CSS, JavaScript and [OMDb API](https://www.omdbapi.com).
 
 ## Table of contents
 
